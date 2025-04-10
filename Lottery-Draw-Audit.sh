@@ -21,8 +21,18 @@ if [ "$calculated_hash" != "$expected_hash" ]; then
     exit 1
 fi
 
-hash_int=$(echo "ibase=16; ${calculated_hash^^}" | bc)
-draw_result=$(( hash_int % participants + 1 ))
+hash_hex=${calculated_hash^^}
+hash_decimal=0
+for ((i=0; i<${#hash_hex}; i++)); do
+    digit=${hash_hex:$i:1}
+    if [[ $digit =~ [0-9] ]]; then
+        val=$((16#$digit))
+    else
+        val=$((16#$digit))
+    fi
+    hash_decimal=$(( (hash_decimal * 16 + val) % participants ))
+done
+draw_result=$(( hash_decimal + 1 ))
 
 echo "Initial Seed:     $initial_seed"
 echo "Final Seed:       $final_seed"
