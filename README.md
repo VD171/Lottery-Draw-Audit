@@ -31,10 +31,10 @@ perl Lottery-Draw-Audit.pl "-100123456789|1234|1234567890" "-100123456789|4321|0
 > Initial Seed:     -100123456789|1234|1234567890  
 > Final Seed:       -100123456789|4321|0987654321  
 > Participants:     171  
-> Expected Hash:    3d23237f35fda8df3d7c6f223bb55b2b9ce966e354a97c9c292a7b480cb05e09  
-> Calculated Hash:  3d23237f35fda8df3d7c6f223bb55b2b9ce966e354a97c9c292a7b480cb05e09  
->  
+> Final Hash:       3d23237f35fda8df3d7c6f223bb55b2b9ce966e354a97c9c292a7b480cb05e09  
+> ======================  
 > 🎯 DRAW RESULT:   60  
+> ======================  
   
 ## License
 This project is licensed under the **GNU Affero General Public License v3.0**.  
