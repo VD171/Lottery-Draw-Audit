@@ -1,4 +1,11 @@
-# Bash Script
+# Lottery Draw Audit
+
+Scripts to audit and verify lottery draw results. Given the initial seed, the final seed, the number of
+participants and the published hash, each script recomputes `sha256("<initial_seed>|<participants>|<final_seed>")`,
+checks it against the hash and derives the winning number (`hash mod participants + 1`). Same logic in Bash,
+Python and Perl: pick the one you have at hand.
+
+## Bash Script
 #### Download
 ```bash
 curl -o Lottery-Draw-Audit.sh https://raw.githubusercontent.com/VD171/Lottery-Draw-Audit/refs/heads/main/Lottery-Draw-Audit.sh
@@ -11,7 +18,7 @@ sh Lottery-Draw-Audit.sh <initial_seed> <final_seed> <number_of_participants> <f
 ```bash
 sh Lottery-Draw-Audit.sh "-100123456789|1234|1234567890" "-100123456789|4321|0987654321" 171 "3d23237f35fda8df3d7c6f223bb55b2b9ce966e354a97c9c292a7b480cb05e09"
 ```
-# Python Script
+## Python Script
 #### Download
 ```bash
 curl -o Lottery-Draw-Audit.py https://raw.githubusercontent.com/VD171/Lottery-Draw-Audit/refs/heads/main/Lottery-Draw-Audit.py
@@ -24,7 +31,7 @@ python Lottery-Draw-Audit.py <initial_seed> <final_seed> <number_of_participants
 ```bash
 python Lottery-Draw-Audit.py "-100123456789|1234|1234567890" "-100123456789|4321|0987654321" 171 "3d23237f35fda8df3d7c6f223bb55b2b9ce966e354a97c9c292a7b480cb05e09"
 ```
-# Perl Script
+## Perl Script
 #### Download
 ```bash
 curl -o Lottery-Draw-Audit.pl https://raw.githubusercontent.com/VD171/Lottery-Draw-Audit/refs/heads/main/Lottery-Draw-Audit.pl
@@ -38,7 +45,7 @@ perl Lottery-Draw-Audit.pl <initial_seed> <final_seed> <number_of_participants> 
 perl Lottery-Draw-Audit.pl "-100123456789|1234|1234567890" "-100123456789|4321|0987654321" 171 "3d23237f35fda8df3d7c6f223bb55b2b9ce966e354a97c9c292a7b480cb05e09"
 ```
   
-# Expected Output
+## Expected Output
 `Initial Seed:     -100123456789|1234|1234567890`  
 `Final Seed:       -100123456789|4321|0987654321`  
 `Participants:     171`  
